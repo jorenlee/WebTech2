@@ -1,0 +1,7 @@
+{
+  "name": "ionic-tictactoe",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
