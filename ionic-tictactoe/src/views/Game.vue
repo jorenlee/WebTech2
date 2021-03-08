@@ -1,33 +1,32 @@
 <template>
   <ion-page>
-    <ion-content>
+    <ion-content :fullscreen="true">
+      <div id="container">
   <div class="game">
     <div class="game-area">
       <div class="game-title">
-        <img src="logo.svg" alt="Ionic" />
         <h1>Activity 2</h1>
       </div>
-        <board :squares="squares" :winner="winner" @click="click" />
+        <Board :squares="squares" :winner="winner" @click="click" />
     <div class="game-info">
-        <p v-if="stepNumber === 0">
-            Let's start! Go there&nbsp;<b :class="currentPlayer">{{ currentPlayer }}</b>!
-        </p>
+        <p v-if="stepNumber === 0">Let's Get start!&nbsp;<b :class="currentPlayer">{{ currentPlayer }}</b>!</p>
         <p v-else-if="!!winner">
-            The winner was:&nbsp;
+            The winner is:&nbsp;
             <b :class="currentPlayer">{{ currentPlayer }}</b>!&nbsp;
-            <button @click="restart">Play again</button>
+            <button @click="restart">Try Again</button>
         </p>
         <p v-else-if="stepNumber > 8">
             Gave old!&nbsp;
-            <button @click="restart">Play again</button>
+            <button @click="restart">Try again</button>
         </p>
         <p v-else>
-            Now it's the player's turn&nbsp;
-            <b :class="currentPlayer">{{ currentPlayer }}</b>!&nbsp;atuar.
+            Now it's your turn&nbsp;
+            <b :class="currentPlayer">{{ currentPlayer }}</b>!&nbsp;Act.
         </p>
     </div>
     </div>
   </div>
+      </div>
     </ion-content>
   </ion-page>
 </template>
@@ -63,9 +62,9 @@ export default defineComponent({
           ]
 
           for(let i = 0; i < matches.length; i++){
-              const [a,b,c] = matches[i]
+              const [ a, b , c ] = matches[i]
               if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
-                  this.winner = [a,b,c]
+                  this.winner = [ a , b , c ]
                   return true
               }
           }
@@ -76,20 +75,20 @@ export default defineComponent({
       restart() {
           this.squares = Array(9).fill(null)
           this.stepNumber = 0
-          this.currentPlayer = this.currentPlayer
+          this.currentPlayer = 'X'
           this.winner = null
       },
 
       click(i) {
             if (this.squares[i] || this.winner) return
-            this.$set(this.squares, i, this.currentPlayer)
+            this.squares[i] = this.currentPlayer;
+            this.stepNumber++
         if (!this.hasWinner()) {
-                this.stepNumber++
-                this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X'
+                this.currentPlayer = this.stepNumber%2 ?'X':'O'
       }
     }
   }
-});
+})
 </script>
 
 <style scoped>

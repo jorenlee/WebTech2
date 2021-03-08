@@ -16,7 +16,7 @@ export default defineComponent({
           this.$emit('click')
       }
   }
-});
+})  
 </script>
 
 <style scoped>

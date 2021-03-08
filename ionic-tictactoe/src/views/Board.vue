@@ -25,12 +25,12 @@ export default defineComponent({
     },
   methods: {
     indexByRow (index, row, max = 3) {
-      return (row * max + index) - (max + 1)
+      return row * max + index - (max + 1)
     },
     click(index, row) {
-      this.$emit('click', this.indexByRow(index, row));
-    }
-  }
+      this.$emit('click', this.indexByRow(index, row))
+    },
+  },
 });
 </script>
 
