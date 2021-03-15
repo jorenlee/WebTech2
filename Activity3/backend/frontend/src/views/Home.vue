@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Blank</ion-title>
+        <ion-title>Activity 3</ion-title>
       </ion-toolbar>
     </ion-header>
     
@@ -14,8 +14,8 @@
       </ion-header>
     
       <div id="container">
-        <strong>Hello World</strong>
-        <p>Nestjs and Vue <a target="_blank" rel="noopener noreferrer" href="http://localhost:3000/home">Activity 3</a></p>
+        <strong>Hello World!</strong>
+        <p>Kurt Vonn Alde <a target="_blank" rel="noopener noreferrer" href="http://localhost:3000/home">Activity 3</a></p>
       </div>
     </ion-content>
   </ion-page>
