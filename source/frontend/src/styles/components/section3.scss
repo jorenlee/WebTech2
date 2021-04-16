@@ -1,0 +1,22 @@
+.section3{
+     width:fit-content;
+     border: 1px solid red;
+     margin: 50px auto;
+     .sample{
+          background: #a33117;
+     }
+     .event{
+          display: inline-block;
+          width: 200px;
+          height: 200px;
+          background: orange;
+          color: black;
+     }
+     .calendar-activities{
+          display: inline-block;
+          width: 200px;
+          height: 200px;
+          background: yellow;
+          color: black;
+     }
+}
